@@ -235,7 +235,6 @@ export class BooksComponent implements OnInit {
 
   // adds new book
   private addNewBook(book: Book): void {
-    book.bookId = AppUtil.getId();
     book.siteId = this.motsepeSiteId;
     this.loading = true;
     this.bookService.addBook(book).subscribe(savedBook => {

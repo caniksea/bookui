@@ -49,6 +49,11 @@ export class ChaptersComponent implements OnInit {
       confirmDelete: true,
     },
     columns: {
+      chapterNumber: {
+        title: 'Number',
+        type: 'string',
+        width: '10%',
+      },
       chapterTitle: {
         title: 'Title',
         type: 'string',
@@ -201,6 +206,7 @@ export class ChaptersComponent implements OnInit {
 
     activeModal.componentInstance.header = header;
     activeModal.componentInstance.editChapter = chapter;
+    activeModal.componentInstance.chapters = this.chapters;
 
     activeModal.result.then((c: Chapter) => {
       if (c) {
@@ -242,8 +248,8 @@ export class ChaptersComponent implements OnInit {
 
   // adds new chapter
   private addNewChapter(chapter: Chapter): void {
-    chapter.chapterId = AppUtil.getId();
     chapter.bookId = this.bookId;
+    chapter.chapterLink = chapter.chapterTitle;
     this.loading = true;
     this.chapterService.addChapter(chapter).subscribe(savedChapter => {
         if (savedChapter) {

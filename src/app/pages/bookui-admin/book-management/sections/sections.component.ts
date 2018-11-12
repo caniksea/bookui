@@ -272,7 +272,6 @@ export class SectionsComponent implements OnInit {
   }
 
   private addNewSection(section: Section): void {
-    section.sectionId = AppUtil.getId();
     section.chapterId = this.selectedChapter.chapterId;
     this.loading = true;
     this.sectionService.addSection(section).subscribe(addedSection => {
