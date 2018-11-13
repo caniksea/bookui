@@ -49,20 +49,19 @@ export class AddEditChapterComponent implements OnInit {
   addEditChapter(entity, isValid: boolean): void {
     if (isValid) {
       let chapter = this.editChapter;
-      if (chapter) {
-        chapter.chapterNumber = +entity.chapterNumber;
-        chapter.chapterTitle = entity.chapterTitle;
-        chapter.chapterDescription = entity.chapterDescription;
-        chapter.story = entity.chapterStory;
-      } else {
+      if (!chapter) {
         chapter = new Chapter();
-        chapter.chapterNumber = +entity.chapterNumber;
-        chapter.chapterTitle = entity.chapterTitle;
-        chapter.chapterDescription = entity.chapterDescription;
-        chapter.story = entity.chapterStory;
       }
+      chapter.chapterNumber = +entity.chapterNumber;
+      chapter.chapterTitle = entity.chapterTitle;
+      chapter.chapterDescription = entity.chapterDescription;
+      chapter.story = entity.chapterStory;
       this.activeModal.close(chapter);
     }
+  }
+
+  onEditorChange(event): void {
+    this.chapterStory.setValue(event);
   }
 
   private populateForm(): void {
@@ -70,9 +69,5 @@ export class AddEditChapterComponent implements OnInit {
     this.chapterTitle.setValue(this.editChapter.chapterTitle);
     this.chapterDescription.setValue(this.editChapter.chapterDescription);
     this.chapterStory.setValue(this.editChapter.story);
-  }
-
-  onEditorChange(event): void {
-    this.chapterStory.setValue(event);
   }
 }
