@@ -3,6 +3,7 @@ import {AppUtil} from '../../../../conf/app-util';
 export class SubSection {
   sectionId: string;
   subsectionId: string;
+  subsectionNumber: number;
   subsectionTitle: string;
   subsectionDescription: string;
   story: string;
