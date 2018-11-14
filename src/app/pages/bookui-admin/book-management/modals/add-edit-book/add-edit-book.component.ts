@@ -1,7 +1,10 @@
-import { Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Book} from '../../domain/book';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+
+import './ckeditor-loader';
+import 'ckeditor';
 
 @Component({
   selector: 'ngx-add-book',
@@ -60,26 +63,17 @@ export class AddEditBookComponent implements OnInit {
   addEditBook(entity, isValid: boolean): void {
     if (isValid) {
       let book = this.editBook;
-      if (book) {
-        book.datePublished = this.formatToDate(entity.bookDatePublished);
-        book.eisbn = entity.bookEisbn;
-        book.isbn = entity.bookIsbn;
-        book.publisher = entity.bookPublisher;
-        book.author = entity.bookAuthor;
-        book.bookTitle = entity.bookTitle;
-        book.story = entity.bookStory;
-        book.bookDescription = entity.bookDescription;
-      } else {
+      if (!book) {
         book = new Book();
-        book.datePublished = this.formatToDate(entity.bookDatePublished);
-        book.eisbn = entity.bookEisbn;
-        book.isbn = entity.bookIsbn;
-        book.publisher = entity.bookPublisher;
-        book.author = entity.bookAuthor;
-        book.bookTitle = entity.bookTitle;
-        book.story = entity.bookStory;
-        book.bookDescription = entity.bookDescription;
       }
+      book.datePublished = this.formatToDate(entity.bookDatePublished);
+      book.eisbn = entity.bookEisbn;
+      book.isbn = entity.bookIsbn;
+      book.publisher = entity.bookPublisher;
+      book.author = entity.bookAuthor;
+      book.bookTitle = entity.bookTitle;
+      book.story = entity.bookStory;
+      book.bookDescription = entity.bookDescription;
       this.activeModal.close(book);
     }
 
@@ -97,9 +91,9 @@ export class AddEditBookComponent implements OnInit {
     this.bookStory.setValue(this.editBook.story);
   }
 
-  onEditorChange(event): void {
-    this.bookStory.setValue(event);
-  }
+  // onEditorChange(event): void {
+  //   this.bookStory.setValue(event);
+  // }
 
   setMaxDate(): NgbDateStruct {
     const today = new Date();

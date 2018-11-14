@@ -51,6 +51,7 @@ export class AddEditSubsectionComponent implements OnInit {
         subsection = new SubSection();
       }
       subsection.subsectionTitle = entity.subsectionTitle;
+      subsection.subsectionNumber = +entity.subsectionNumber;
       subsection.story = entity.subsectionStory;
       subsection.subsectionDescription = entity.subsectionDescription;
       this.activeModal.close(subsection);
