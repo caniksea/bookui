@@ -3,6 +3,10 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {SubSection} from '../../domain/sub-section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+import './ckeditor-loader';
+import 'ckeditor';
+
+
 @Component({
   selector: 'ngx-add-edit-subsection',
   templateUrl: './add-edit-subsection.component.html',

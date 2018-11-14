@@ -3,6 +3,9 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Section} from '../../domain/section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+import './ckeditor-loader';
+import 'ckeditor';
+
 @Component({
   selector: 'ngx-add-edit-section',
   templateUrl: './add-edit-section.component.html',
