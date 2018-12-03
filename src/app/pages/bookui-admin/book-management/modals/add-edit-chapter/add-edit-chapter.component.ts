@@ -4,6 +4,9 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Chapter} from '../../domain/chapter';
 import {AppUtil} from '../../../../../conf/app-util';
 
+import './ckeditor-loader';
+import 'ckeditor';
+
 @Component({
   selector: 'ngx-add-edit-chapter',
   templateUrl: './add-edit-chapter.component.html',

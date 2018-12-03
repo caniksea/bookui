@@ -36,8 +36,10 @@
         </div>
         <div class="form-group">
           <label for="subsectionStory">Story</label>
-          <ngx-tiny-mce type="textarea" [formControl]="addSubSectionForm.controls['subsectionStory']"
-                        id="subsectionStory" (editorChange)="onEditorChange($event)" ngDefaultControl></ngx-tiny-mce>
+          <!--<ngx-tiny-mce type="textarea" [formControl]="addSubSectionForm.controls['subsectionStory']"-->
+                        <!--id="subsectionStory" (editorChange)="onEditorChange($event)" ngDefaultControl></ngx-tiny-mce>-->
+          <ckeditor [formControl]="addSubSectionForm.controls['subsectionStory']" [config]="{ extraPlugins: 'divarea', height: '320' }" id="subsectionStory"></ckeditor>
+
         </div>
       </nb-card-body>
     </nb-card>

@@ -3,6 +3,10 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {SubSection} from '../../domain/sub-section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+import './ckeditor-loader';
+import 'ckeditor';
+
+
 @Component({
   selector: 'ngx-add-edit-subsection',
   templateUrl: './add-edit-subsection.component.html',
@@ -51,6 +55,7 @@ export class AddEditSubsectionComponent implements OnInit {
         subsection = new SubSection();
       }
       subsection.subsectionTitle = entity.subsectionTitle;
+      subsection.subsectionNumber = +entity.subsectionNumber;
       subsection.story = entity.subsectionStory;
       subsection.subsectionDescription = entity.subsectionDescription;
       this.activeModal.close(subsection);
