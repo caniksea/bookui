@@ -1,9 +1,10 @@
 import { Component, Input, OnInit} from '@angular/core';
-import {NgbActiveModal, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Section} from '../../domain/section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AppUtil} from '../../../../../conf/app-util';
-import {Chapter} from '../../domain/chapter';
+
+import './ckeditor-loader';
+import 'ckeditor';
 
 @Component({
   selector: 'ngx-add-edit-section',
@@ -16,6 +17,7 @@ export class AddEditSectionComponent implements OnInit {
   @Input() header: string;
 
   public addSectionForm: FormGroup;
+  public sectionNumber: AbstractControl;
   public sectionTitle: AbstractControl;
   public sectionDescription: AbstractControl;
   public sectionStory: AbstractControl;
@@ -23,11 +25,13 @@ export class AddEditSectionComponent implements OnInit {
 
   ngOnInit() {
     this.addSectionForm = this.builder.group({
+      'sectionNumber': ['', [Validators.required, Validators.pattern(/^[1-9]\d*$/)]],
       'sectionTitle': ['', Validators.required],
       'sectionDescription': [''],
       'sectionStory': [''],
     });
 
+    this.sectionNumber = this.addSectionForm.controls['sectionNumber'];
     this.sectionTitle = this.addSectionForm.controls['sectionTitle'];
     this.sectionDescription = this.addSectionForm.controls['sectionDescription'];
     this.sectionStory = this.addSectionForm.controls['sectionStory'];
@@ -47,6 +51,7 @@ export class AddEditSectionComponent implements OnInit {
       if (!section) {
         section = new Section();
       }
+      section.sectionNumber = +entity.sectionNumber;
       section.sectionTitle = entity.sectionTitle;
       section.story = entity.sectionStory;
       section.sectionDescription = entity.sectionDescription;
@@ -55,6 +60,7 @@ export class AddEditSectionComponent implements OnInit {
 
   }
   private populateForm(): void {
+    this.sectionNumber.setValue(this.editSection.sectionNumber);
     this.sectionTitle.setValue(this.editSection.sectionTitle);
     this.sectionDescription.setValue(this.editSection.sectionDescription);
     this.sectionStory.setValue(this.editSection.story);

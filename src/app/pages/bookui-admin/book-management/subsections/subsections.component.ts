@@ -311,7 +311,6 @@ export class SubsectionsComponent implements OnInit {
   }
 
   private addNewSubsection(subsection: SubSection): void {
-    subsection.subsectionId = AppUtil.getId();
     subsection.sectionId = this.selectedSection.sectionId;
     this.loading = true;
     this.subsectionService.addSubsection(subsection).subscribe(addedSubsection => {
