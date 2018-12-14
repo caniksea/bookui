@@ -4,8 +4,9 @@ import {ToasterConfig} from 'angular2-toaster';
 
 window['CKEDITOR_BASEPATH'] = '//cdn.ckeditor.com/4.6.2/full-all/';
 
-export const SERVICE_BASE_URL = 'http://155.238.32.101:9000/';
+// export const SERVICE_BASE_URL = 'http://155.238.32.101:9000/';
 // export const SERVICE_BASE_URL = 'http://localhost:9000/';
+export const SERVICE_BASE_URL = 'https://bookapi.hash-code.com/';
 
 export class ToasterUtils {
   // Toaster config
