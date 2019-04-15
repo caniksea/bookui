@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddEditBookComponent } from './add-edit-book.component';
 import {ThemeModule} from '../../../../../@theme/theme.module';
-import {CKEditorModule} from 'ng2-ckeditor';
+// import {CKEditorModule} from 'ng2-ckeditor';
 
 const components = [
   AddEditBookComponent,
@@ -12,9 +12,9 @@ const components = [
   imports: [
     CommonModule,
     ThemeModule,
-    CKEditorModule,
+    // CKEditorModule,
   ],
-  declarations: [...components],
-  exports: [...components],
+  // declarations: [...components],
+  // exports: [...components],
 })
 export class AddEditBookModule { }

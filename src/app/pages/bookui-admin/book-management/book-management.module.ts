@@ -10,7 +10,8 @@ import {AddEditBookComponent} from './modals/add-edit-book/add-edit-book.compone
 import {AddEditSectionComponent} from './modals/add-edit-section/add-edit-section.component';
 import {AddEditChapterComponent} from './modals/add-edit-chapter/add-edit-chapter.component';
 import {AddEditSubsectionComponent} from './modals/add-edit-subsection/add-edit-subsection.component';
-import {CKEditorModule} from 'ng2-ckeditor';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+// import {CKEditorModule} from 'ng2-ckeditor';
 
 const components = [
   BookManagementComponent,
@@ -23,8 +24,8 @@ const components = [
 @NgModule({
   imports: [
     ThemeModule,
-    BookManagementRoutingModule,
     CKEditorModule,
+    BookManagementRoutingModule,
     BooksModule,
     ChaptersModule,
     SectionsModule,

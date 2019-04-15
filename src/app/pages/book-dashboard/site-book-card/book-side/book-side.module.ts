@@ -6,6 +6,6 @@ import { BookSideComponent } from './book-side.component';
   imports: [
     CommonModule,
   ],
-  declarations: [BookSideComponent],
+  // declarations: [BookSideComponent],
 })
 export class BookSideModule { }

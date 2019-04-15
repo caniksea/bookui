@@ -132,20 +132,20 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-  // {
-  //   title: 'Editors',
-  //   icon: 'nb-title',
-  //   children: [
-  //     {
-  //       title: 'TinyMCE',
-  //       link: '/bookui/editors/tinymce',
-  //     },
-  //     {
-  //       title: 'CKEditor',
-  //       link: '/bookui/editors/ckeditor',
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Editors',
+    icon: 'nb-title',
+    children: [
+      {
+        title: 'TinyMCE',
+        link: '/bookui/editors/tinymce',
+      },
+      {
+        title: 'CKEditor',
+        link: '/bookui/editors/ckeditor',
+      },
+    ],
+  },
   // {
   //   title: 'Tables',
   //   icon: 'nb-tables',
