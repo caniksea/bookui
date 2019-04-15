@@ -44,8 +44,8 @@ import {
 import {
   OneColumnLayoutComponent,
   SampleLayoutComponent,
-  // ThreeColumnsLayoutComponent,
-  // TwoColumnsLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  TwoColumnsLayoutComponent,
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -84,8 +84,8 @@ const COMPONENTS = [
   TinyMCEComponent,
   OneColumnLayoutComponent,
   SampleLayoutComponent,
-  // ThreeColumnsLayoutComponent,
-  // TwoColumnsLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  TwoColumnsLayoutComponent,
 ];
 
 const ENTRY_COMPONENTS = [

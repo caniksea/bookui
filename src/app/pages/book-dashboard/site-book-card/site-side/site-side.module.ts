@@ -6,6 +6,6 @@ import { SiteSideComponent } from './site-side.component';
   imports: [
     CommonModule,
   ],
-  declarations: [SiteSideComponent],
+  // declarations: [SiteSideComponent],
 })
 export class SiteSideModule { }

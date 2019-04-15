@@ -2,9 +2,11 @@ import { Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Section} from '../../domain/section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Class} from 'leaflet';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-import './ckeditor-loader';
-import 'ckeditor';
+// import './ckeditor-loader';
+// import 'ckeditor';
 
 @Component({
   selector: 'ngx-add-edit-section',
@@ -21,6 +23,9 @@ export class AddEditSectionComponent implements OnInit {
   public sectionTitle: AbstractControl;
   public sectionDescription: AbstractControl;
   public sectionStory: AbstractControl;
+
+  public Editor = ClassicEditor;
+
   constructor(private builder: FormBuilder, private activeModal: NgbActiveModal) { }
 
   ngOnInit() {

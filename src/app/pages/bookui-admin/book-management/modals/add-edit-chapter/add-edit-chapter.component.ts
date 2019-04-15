@@ -3,9 +3,10 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Chapter} from '../../domain/chapter';
 import {AppUtil} from '../../../../../conf/app-util';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-import './ckeditor-loader';
-import 'ckeditor';
+// import './ckeditor-loader';
+// import 'ckeditor';
 
 @Component({
   selector: 'ngx-add-edit-chapter',
@@ -23,6 +24,8 @@ export class AddEditChapterComponent implements OnInit {
   public chapterTitle: AbstractControl;
   public chapterDescription: AbstractControl;
   public chapterStory: AbstractControl;
+
+  public Editor = ClassicEditor;
 
   constructor(private builder: FormBuilder, private activeModal: NgbActiveModal) {
   }

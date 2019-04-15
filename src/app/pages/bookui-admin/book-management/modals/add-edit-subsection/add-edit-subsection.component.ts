@@ -2,9 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {SubSection} from '../../domain/sub-section';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-import './ckeditor-loader';
-import 'ckeditor';
+// import './ckeditor-loader';
+// import 'ckeditor';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class AddEditSubsectionComponent implements OnInit {
   public subsectionTitle: AbstractControl;
   public subsectionDescription: AbstractControl;
   public subsectionStory: AbstractControl;
+
+  public Editor = ClassicEditor;
 
   constructor(private builder: FormBuilder, private activeModal: NgbActiveModal) {
   }

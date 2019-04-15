@@ -2,9 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NgbActiveModal, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {Book} from '../../domain/book';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-
-import './ckeditor-loader';
-import 'ckeditor';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'ngx-add-book',
@@ -25,6 +23,8 @@ export class AddEditBookComponent implements OnInit {
   public bookDatePublished: AbstractControl;
   public bookDescription: AbstractControl;
   public bookStory: AbstractControl;
+
+  public Editor = ClassicEditor;
 
   constructor(private builder: FormBuilder, private activeModal: NgbActiveModal) {
   }
