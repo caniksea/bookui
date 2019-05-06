@@ -82,7 +82,8 @@
           <label for="bookStory">Story</label>
           <!--<ngx-tiny-mce type="textarea" [formControl]="addBookForm.controls['bookStory']"-->
                         <!--id="bookStory" (editorChange)="onEditorChange($event)" ngDefaultControl></ngx-tiny-mce>-->
-           <ckeditor [editor]="Editor" [formControl]="addBookForm.controls['bookStory']" id="bookStory"></ckeditor>
+<!--           <ckeditor [editor]="Editor" [formControl]="addBookForm.controls['bookStory']" id="bookStory"></ckeditor>-->
+          <ckeditor [formControl]="addBookForm.controls['bookStory']" id="bookStory" [config]="{ extraPlugins: 'divarea', height: '480' }"></ckeditor>
         </div>
       </nb-card-body>
     </nb-card>
